@@ -9,7 +9,8 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>UI Portfolio - Personal Category Bootstrap Responsive Website Template - Contact : W3Layouts</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title></title>
 
     <!-- google-fonts -->
     <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -133,7 +134,7 @@ Author URL: http://w3layouts.com
             <div class="d-grid cont-main-top">
                 <!-- contact form -->
                 <div class="contacts12-main">
-                    <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="main-input" id="contact-form" style="color: red;">
+                    <form action="" class="main-input" id="submit-form" style="color: red;">
                         <div class="top-inputs d-grid">
                             <input type="text"  placeholder="Name" name="w3lName text-warning" id="w3lName" required="">
                             <input type="email" name="email" placeholder="Email" id="w3lSender" required="">
@@ -401,6 +402,25 @@ Author URL: http://w3layouts.com
 
  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
  <script src="assets/js/contact.js"></script>
+    <script>
+    $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbxnYZUR5oeKIP0QYRDRgPsWnck6rQSeiGzGt3ro6eIM_Fr_AXbTzlHAvZEt1Zv7EMsM/exec",
+            data:$("#submit-form").serialize(),
+            method:"post",
+            success:function (response){
+                alert("Form submitted successfully")
+                window.location.reload()
+                //window.location.href="https://google.com"
+            },
+            error:function (err){
+                alert("Something Error")
+
+            }
+        })
+    })
+</script>
 </body>
 
 </html>
